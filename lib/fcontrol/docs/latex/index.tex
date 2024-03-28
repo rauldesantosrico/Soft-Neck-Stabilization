@@ -1,0 +1,79 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ Control engeneering c++ library.
+
+Documentation\+: \href{http://munoz.yanez.gitlab.io/fcontrol/}{\texttt{ http\+://munoz.\+yanez.\+gitlab.\+io/fcontrol/}}\hypertarget{index_autotoc_md1}{}\doxysection{Dependencies}\label{index_autotoc_md1}
+Build system is configured to search for the following dependencies as required (will throw error if not installed).
+
+
+\begin{DoxyItemize}
+\item fftw
+\item eigen
+\end{DoxyItemize}
+
+You can install under a debian based linux with\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install fftw-\/dev libeigen3-\/dev}
+
+\end{DoxyCode}
+ For ubuntu 18.\+04 LTS you need FFTW3 library instead, therefore\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo  apt-\/get install libfftw3-\/dev libeigen3-\/dev}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md2}{}\doxysection{How to use}\label{index_autotoc_md2}
+This library is intended for the use with CMake build system.\hypertarget{index_autotoc_md3}{}\doxysubsection{In project}\label{index_autotoc_md3}
+For in project CMake build, find all the include and link directories in variables\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SUBDIR\_INCLUDE\_DIRECTORIES}
+\DoxyCodeLine{SUBDIR\_LINK\_NAMES}
+
+\end{DoxyCode}
+
+
+Then, assuming the library is placed at \char`\"{}\$\{\+PROJECT\+\_\+\+SOURCE\+\_\+\+DIR\}/lib/fcontrol/\char`\"{} (for example after clone with {\ttfamily git clone \href{https://gitlab.com/munoz.yanez/fcontrol.git}{\texttt{ https\+://gitlab.\+com/munoz.\+yanez/fcontrol.\+git}}}, it is enough to add the following lines to CMake\+Lists.\+txt to add includes\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{add\_subdirectory(\$\{PROJECT\_SOURCE\_DIR\}/lib/fcontrol/)}
+\DoxyCodeLine{INCLUDE\_DIRECTORIES(\$\{SUBDIR\_INCLUDE\_DIRECTORIES\})}
+
+\end{DoxyCode}
+
+
+Also after \char`\"{}add\+\_\+executable( \$\{name\} \$\{sourcefile\} )\char`\"{} line, add the following to link the library\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{target\_link\_libraries( \$\{PROJECT\_NAME\} \$\{SUBDIR\_LINK\_NAMES\} )}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md4}{}\doxysubsection{As a system library}\label{index_autotoc_md4}
+Use the usual CMake and make install commands in order to compile and install library on the system
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://gitlab.com/munoz.yanez/fcontrol.git}
+\DoxyCodeLine{mkdir .fcontrol-\/build}
+\DoxyCodeLine{cd .fcontrol-\/build}
+\DoxyCodeLine{cmake ../fcontrol}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make install}
+
+\end{DoxyCode}
+
+
+Then use Findfcontrol.\+cmake file from ( \href{https://gitlab.com/munoz.yanez/fcontrol-example/blob/master/cmake/Findfcontrol.cmake}{\texttt{ https\+://gitlab.\+com/munoz.\+yanez/fcontrol-\/example/blob/master/cmake/\+Findfcontrol.\+cmake}} ) in order to use CMake find\+\_\+package(fcontrol) directive.
+
+You can also uninstall the library with\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make uninstall}
+
+\end{DoxyCode}
+ inside .fcontrol-\/build directory.
+
+See \href{https://gitlab.com/munoz.yanez/fcontrol-example/blob/master/lib/CMakeLists.txt}{\texttt{ https\+://gitlab.\+com/munoz.\+yanez/fcontrol-\/example/blob/master/lib/\+CMake\+Lists.\+txt}} for an example of both cases. 

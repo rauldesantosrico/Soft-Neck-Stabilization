@@ -1,0 +1,216 @@
+\hypertarget{classStateSpace}{}\doxysection{State\+Space Class Reference}
+\label{classStateSpace}\index{StateSpace@{StateSpace}}
+
+
+Inheritance diagram for State\+Space\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classStateSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for State\+Space\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classStateSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStateSpace_a9809804afcf94ebe347e19300d1a072e}{State\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Apply an output saturation to block response. Only output saturation is available. If you need an input saturation use the previous block output saturation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStateSpace_a7e95553cee0f2bec04ca2cb640647de2}{State\+Space}} (Matrix\+Xd G, Matrix\+Xd H, Matrix\+Xd C, Matrix\+Xd D, double dts)
+\begin{DoxyCompactList}\small\item\em System constructor in state space from its arrays. Parameters expressed in Eigen\textquotesingle{}s matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStateSpace_a0d47e3b9ae2042fbe23f6cadafb0bfa0}{State\+Space}} (std\+::vector$<$ vector$<$ double $>$$>$ G, std\+::vector$<$ vector$<$ double $>$$>$ H, std\+::vector$<$ vector$<$ double $>$$>$C, std\+::vector$<$ vector$<$ double $>$$>$D, double dts)
+\begin{DoxyCompactList}\small\item\em System constructor in state space from its arrays. Parameters expressed in vector$<$vector$<$double$>$$>$. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStateSpace_a51aa060ca6a5b452f4a2684364026b40}{output}} (double new\+\_\+input)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classStateSpace_a51aa060ca6a5b452f4a2684364026b40}{State\+Space\+::output(double new\+\_\+input)}}\+: Get output\textquotesingle{}s system as a double. \end{DoxyCompactList}\item 
+std\+::vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{classStateSpace_a6a9a97126dff4b57ec67e54b21450853}{get\+Observability\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classStateSpace_a6a9a97126dff4b57ec67e54b21450853}{State\+Space\+::get\+Observability\+Matrix()}}\+: Calculate observability Matrix of the system. Return a std\+::vector$<$vector$<$double$>$$>$. \end{DoxyCompactList}\item 
+std\+::vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{classStateSpace_aa4eb486e618032f940a9da8c8e087593}{get\+Controllabilty\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classStateSpace_aa4eb486e618032f940a9da8c8e087593}{State\+Space\+::get\+Controllabilty\+Matrix()}}\+: Calculate controllabilty Matrix of the system. Return a std\+::vector$<$vector$<$double$>$$>$. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStateSpace_ab0fbc3581f0fe8a7ede0696b1a44b2e7}{Get\+State}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classStateSpace_ab0fbc3581f0fe8a7ede0696b1a44b2e7}{State\+Space\+::\+Get\+State()}}\+: Get state or current output system. Return a double. \end{DoxyCompactList}\item 
+std\+::vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{classStateSpace_a1eba64e79c245e5432b1437a23c8a931}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classStateSpace_a1eba64e79c245e5432b1437a23c8a931}{State\+Space\+::get\+State()}}\+: Get state or output system as a vector$<$vector$<$double$>$$>$ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateSpace_addc917661a068ad76d7203b01d614561}{print\+System}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classStateSpace_addc917661a068ad76d7203b01d614561}{State\+Space\+::print\+System()}}\+: Print system information by console. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStateSpace_ae1bd55df3560301a23c6e0a079b217c0}\label{classStateSpace_ae1bd55df3560301a23c6e0a079b217c0}} 
+void {\bfseries set\+Param} (Matrix\+Xd G, Matrix\+Xd H, Matrix\+Xd C, Matrix\+Xd D, double dts)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStateSpace_a9809804afcf94ebe347e19300d1a072e}\label{classStateSpace_a9809804afcf94ebe347e19300d1a072e}} 
+\index{StateSpace@{StateSpace}!StateSpace@{StateSpace}}
+\index{StateSpace@{StateSpace}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{StateSpace()}{StateSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily State\+Space\+::\+State\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Apply an output saturation to block response. Only output saturation is available. If you need an input saturation use the previous block output saturation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em low} & Lowest value for the possible output. \\
+\hline
+{\em high} & Highest value for the possible output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStateSpace_a7e95553cee0f2bec04ca2cb640647de2}\label{classStateSpace_a7e95553cee0f2bec04ca2cb640647de2}} 
+\index{StateSpace@{StateSpace}!StateSpace@{StateSpace}}
+\index{StateSpace@{StateSpace}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{StateSpace()}{StateSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily State\+Space\+::\+State\+Space (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{\+\_\+G,  }\item[{Matrix\+Xd}]{\+\_\+H,  }\item[{Matrix\+Xd}]{\+\_\+C,  }\item[{Matrix\+Xd}]{\+\_\+D,  }\item[{double}]{dts }\end{DoxyParamCaption})}
+
+
+
+System constructor in state space from its arrays. Parameters expressed in Eigen\textquotesingle{}s matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+G} & State Matrix. \\
+\hline
+{\em \+\_\+H} & Input Matrix. \\
+\hline
+{\em \+\_\+C} & Output Matrix. \\
+\hline
+{\em \+\_\+D} & Feedthrough Matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStateSpace_a0d47e3b9ae2042fbe23f6cadafb0bfa0}\label{classStateSpace_a0d47e3b9ae2042fbe23f6cadafb0bfa0}} 
+\index{StateSpace@{StateSpace}!StateSpace@{StateSpace}}
+\index{StateSpace@{StateSpace}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{StateSpace()}{StateSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily State\+Space\+::\+State\+Space (\begin{DoxyParamCaption}\item[{std\+::vector$<$ vector$<$ double $>$$>$}]{\+\_\+G,  }\item[{std\+::vector$<$ vector$<$ double $>$$>$}]{\+\_\+H,  }\item[{std\+::vector$<$ vector$<$ double $>$$>$}]{\+\_\+C,  }\item[{std\+::vector$<$ vector$<$ double $>$$>$}]{\+\_\+D,  }\item[{double}]{dts }\end{DoxyParamCaption})}
+
+
+
+System constructor in state space from its arrays. Parameters expressed in vector$<$vector$<$double$>$$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+G} & State Matrix. \\
+\hline
+{\em \+\_\+H} & Input Matrix. \\
+\hline
+{\em \+\_\+C} & Output Matrix. \\
+\hline
+{\em \+\_\+D} & Feedthrough Matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStateSpace_aa4eb486e618032f940a9da8c8e087593}\label{classStateSpace_aa4eb486e618032f940a9da8c8e087593}} 
+\index{StateSpace@{StateSpace}!getControllabiltyMatrix@{getControllabiltyMatrix}}
+\index{getControllabiltyMatrix@{getControllabiltyMatrix}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{getControllabiltyMatrix()}{getControllabiltyMatrix()}}
+{\footnotesize\ttfamily std\+::vector$<$ vector$<$ double $>$ $>$ State\+Space\+::get\+Controllabilty\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classStateSpace_aa4eb486e618032f940a9da8c8e087593}{State\+Space\+::get\+Controllabilty\+Matrix()}}\+: Calculate controllabilty Matrix of the system. Return a std\+::vector$<$vector$<$double$>$$>$. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStateSpace_a6a9a97126dff4b57ec67e54b21450853}\label{classStateSpace_a6a9a97126dff4b57ec67e54b21450853}} 
+\index{StateSpace@{StateSpace}!getObservabilityMatrix@{getObservabilityMatrix}}
+\index{getObservabilityMatrix@{getObservabilityMatrix}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{getObservabilityMatrix()}{getObservabilityMatrix()}}
+{\footnotesize\ttfamily std\+::vector$<$ vector$<$ double $>$ $>$ State\+Space\+::get\+Observability\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classStateSpace_a6a9a97126dff4b57ec67e54b21450853}{State\+Space\+::get\+Observability\+Matrix()}}\+: Calculate observability Matrix of the system. Return a std\+::vector$<$vector$<$double$>$$>$. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStateSpace_a1eba64e79c245e5432b1437a23c8a931}\label{classStateSpace_a1eba64e79c245e5432b1437a23c8a931}} 
+\index{StateSpace@{StateSpace}!getState@{getState}}
+\index{getState@{getState}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::vector$<$ vector$<$ double $>$ $>$ State\+Space\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classStateSpace_a1eba64e79c245e5432b1437a23c8a931}{State\+Space\+::get\+State()}}\+: Get state or output system as a vector$<$vector$<$double$>$$>$ 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStateSpace_ab0fbc3581f0fe8a7ede0696b1a44b2e7}\label{classStateSpace_ab0fbc3581f0fe8a7ede0696b1a44b2e7}} 
+\index{StateSpace@{StateSpace}!GetState@{GetState}}
+\index{GetState@{GetState}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily double State\+Space\+::\+Get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classStateSpace_ab0fbc3581f0fe8a7ede0696b1a44b2e7}{State\+Space\+::\+Get\+State()}}\+: Get state or current output system. Return a double. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLinearSystem}{Linear\+System}}.
+
+\mbox{\Hypertarget{classStateSpace_a51aa060ca6a5b452f4a2684364026b40}\label{classStateSpace_a51aa060ca6a5b452f4a2684364026b40}} 
+\index{StateSpace@{StateSpace}!output@{output}}
+\index{output@{output}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily double State\+Space\+::output (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classStateSpace_a51aa060ca6a5b452f4a2684364026b40}{State\+Space\+::output(double new\+\_\+input)}}\+: Get output\textquotesingle{}s system as a double. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+input} & New value of input at system. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLinearSystem}{Linear\+System}}.
+
+\mbox{\Hypertarget{classStateSpace_addc917661a068ad76d7203b01d614561}\label{classStateSpace_addc917661a068ad76d7203b01d614561}} 
+\index{StateSpace@{StateSpace}!printSystem@{printSystem}}
+\index{printSystem@{printSystem}!StateSpace@{StateSpace}}
+\doxysubsubsection{\texorpdfstring{printSystem()}{printSystem()}}
+{\footnotesize\ttfamily void State\+Space\+::print\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classStateSpace_addc917661a068ad76d7203b01d614561}{State\+Space\+::print\+System()}}\+: Print system information by console. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+State\+Space.\+h\item 
+State\+Space.\+cpp\end{DoxyCompactItemize}

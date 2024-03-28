@@ -1,0 +1,108 @@
+\hypertarget{classFPDTuner}{}\doxysection{FPDTuner Class Reference}
+\label{classFPDTuner}\index{FPDTuner@{FPDTuner}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFPDTuner_aeeb1671270484b0e0ce56fb275aa3f09}{FPDTuner}} (double new\+\_\+pm=60, double new\+\_\+wcg=1, double new\+\_\+dts=0.\+01)
+\begin{DoxyCompactList}\small\item\em Class implementing an iso-\/m tuning algorithm. Once the control frequency specifications are defined, an object of this class can tune (compute controller parameters) of any \mbox{\hyperlink{classFPDBlock}{FPDBlock}} object based on the specifications and plant model. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classFPDTuner_a217b70d28b9e6aea55d2944b1da76f5a}{Tune\+Isom}} (const \mbox{\hyperlink{classSystemBlock}{System\+Block}} \&sys)
+\begin{DoxyCompactList}\small\item\em Compute the FPD controller parameters according the received plant model. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classFPDTuner_a11f96d1b5fc458a0bb398ad234cb9a2b}{Tune\+Isom}} (const \mbox{\hyperlink{classSystemBlock}{System\+Block}} \&sys, vector$<$ double $>$ \&out\+\_\+params)
+\begin{DoxyCompactList}\small\item\em Compute the FPD controller parameters according the received plant model. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classFPDTuner_a51e365dc1ed9395c4118648e0d78137a}{Tune\+Isom}} (const \mbox{\hyperlink{classSystemBlock}{System\+Block}} \&sys, \mbox{\hyperlink{classFPDBlock}{FPDBlock}} \&con)
+\begin{DoxyCompactList}\small\item\em Compute the FPD controller parameters according the received plant model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFPDTuner_ac3e1a4cbf4381ddaa32522956ecc313c}\label{classFPDTuner_ac3e1a4cbf4381ddaa32522956ecc313c}} 
+long {\bfseries Tune\+Isom} (const vector$<$ \mbox{\hyperlink{classSystemBlock}{System\+Block}} $>$ \&sys, \mbox{\hyperlink{classFPDBlock}{FPDBlock}} \&con)
+\item 
+\mbox{\Hypertarget{classFPDTuner_ae4f82f2e62c21dace559e9e6b9bab8df}\label{classFPDTuner_ae4f82f2e62c21dace559e9e6b9bab8df}} 
+long {\bfseries Get\+Parameters} (double \&out\+\_\+kp, double \&out\+\_\+ka, double \&out\+\_\+alpha)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFPDTuner_aeeb1671270484b0e0ce56fb275aa3f09}\label{classFPDTuner_aeeb1671270484b0e0ce56fb275aa3f09}} 
+\index{FPDTuner@{FPDTuner}!FPDTuner@{FPDTuner}}
+\index{FPDTuner@{FPDTuner}!FPDTuner@{FPDTuner}}
+\doxysubsubsection{\texorpdfstring{FPDTuner()}{FPDTuner()}}
+{\footnotesize\ttfamily FPDTuner\+::\+FPDTuner (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+pm = {\ttfamily 60},  }\item[{double}]{new\+\_\+wcg = {\ttfamily 1},  }\item[{double}]{new\+\_\+dts = {\ttfamily 0.01} }\end{DoxyParamCaption})}
+
+
+
+Class implementing an iso-\/m tuning algorithm. Once the control frequency specifications are defined, an object of this class can tune (compute controller parameters) of any \mbox{\hyperlink{classFPDBlock}{FPDBlock}} object based on the specifications and plant model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+pm} & Final system phase margin specification (related to closed loop system overshoot). \\
+\hline
+{\em new\+\_\+wcg} & Final system crossover frequency specification (related to closed loop system peak time). \\
+\hline
+{\em new\+\_\+dts} & The considered loop sampling time. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFPDTuner_a217b70d28b9e6aea55d2944b1da76f5a}\label{classFPDTuner_a217b70d28b9e6aea55d2944b1da76f5a}} 
+\index{FPDTuner@{FPDTuner}!TuneIsom@{TuneIsom}}
+\index{TuneIsom@{TuneIsom}!FPDTuner@{FPDTuner}}
+\doxysubsubsection{\texorpdfstring{TuneIsom()}{TuneIsom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily long FPDTuner\+::\+Tune\+Isom (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSystemBlock}{System\+Block}} \&}]{sys }\end{DoxyParamCaption})}
+
+
+
+Compute the FPD controller parameters according the received plant model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The plant model used for controller tuning. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: 0 if correct. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFPDTuner_a51e365dc1ed9395c4118648e0d78137a}\label{classFPDTuner_a51e365dc1ed9395c4118648e0d78137a}} 
+\index{FPDTuner@{FPDTuner}!TuneIsom@{TuneIsom}}
+\index{TuneIsom@{TuneIsom}!FPDTuner@{FPDTuner}}
+\doxysubsubsection{\texorpdfstring{TuneIsom()}{TuneIsom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily long FPDTuner\+::\+Tune\+Isom (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSystemBlock}{System\+Block}} \&}]{sys,  }\item[{\mbox{\hyperlink{classFPDBlock}{FPDBlock}} \&}]{con }\end{DoxyParamCaption})}
+
+
+
+Compute the FPD controller parameters according the received plant model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The plant model used for controller tuning. \\
+\hline
+{\em con} & \mbox{[}output\mbox{]} The \mbox{\hyperlink{classFPDBlock}{FPDBlock}} object which parameters are to be adjusted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: 0 if correct. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFPDTuner_a11f96d1b5fc458a0bb398ad234cb9a2b}\label{classFPDTuner_a11f96d1b5fc458a0bb398ad234cb9a2b}} 
+\index{FPDTuner@{FPDTuner}!TuneIsom@{TuneIsom}}
+\index{TuneIsom@{TuneIsom}!FPDTuner@{FPDTuner}}
+\doxysubsubsection{\texorpdfstring{TuneIsom()}{TuneIsom()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily long FPDTuner\+::\+Tune\+Isom (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSystemBlock}{System\+Block}} \&}]{sys,  }\item[{vector$<$ double $>$ \&}]{out\+\_\+params }\end{DoxyParamCaption})}
+
+
+
+Compute the FPD controller parameters according the received plant model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The plant model used for controller tuning. \\
+\hline
+{\em out\+\_\+params} & \mbox{[}output\mbox{]} The computed controller parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: 0 if correct. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+FPDTuner.\+h\item 
+FPDTuner.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+\hypertarget{classSystemTF}{}\doxysection{System\+TF Class Reference}
+\label{classSystemTF}\index{SystemTF@{SystemTF}}
+
+
+The \mbox{\hyperlink{classSystemBlock}{System\+Block}} class\+: This class encapsulates a system control block, defined by its transference function G. 
+
+
+
+
+{\ttfamily \#include $<$System\+TF.\+h$>$}
+
+
+
+Inheritance diagram for System\+TF\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classSystemTF__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for System\+TF\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classSystemTF__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSystemTF_abe5de86d74860927d7881890d1319414}\label{classSystemTF_abe5de86d74860927d7881890d1319414}} 
+{\bfseries System\+TF} (const std\+::vector$<$ double $>$ \&new\+\_\+num\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Coef)
+\item 
+\mbox{\Hypertarget{classSystemTF_a42ebb74a20913b2f61f4bc0c8ea8728b}\label{classSystemTF_a42ebb74a20913b2f61f4bc0c8ea8728b}} 
+{\bfseries System\+TF} (const std\+::vector$<$ double $>$ \&new\+\_\+num\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Coef, double new\+\_\+gain)
+\item 
+\mbox{\Hypertarget{classSystemTF_aac06a880770debd2b18bd7c0d76056aa}\label{classSystemTF_aac06a880770debd2b18bd7c0d76056aa}} 
+{\bfseries System\+TF} (const std\+::vector$<$ double $>$ \&new\+\_\+num\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+num\+Exps, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Exps)
+\item 
+\mbox{\Hypertarget{classSystemTF_a13be32a6fb79003ee80c881c39ebeac9}\label{classSystemTF_a13be32a6fb79003ee80c881c39ebeac9}} 
+{\bfseries System\+TF} (const \mbox{\hyperlink{classTransferFunction}{Transfer\+Function}} \&newH)
+\item 
+\mbox{\Hypertarget{classSystemTF_ad4b025d1e065e44a12a6d2432009608f}\label{classSystemTF_ad4b025d1e065e44a12a6d2432009608f}} 
+{\bfseries System\+TF} (double b0, double b1, double a0, double a1)
+\item 
+\mbox{\Hypertarget{classSystemTF_a60a9e6de6be3a5c7bfd9141c364277ad}\label{classSystemTF_a60a9e6de6be3a5c7bfd9141c364277ad}} 
+double {\bfseries Get\+Num\+Order} () const
+\item 
+\mbox{\Hypertarget{classSystemTF_a1f9c8c8862e75fefa275cf1eb9b949a0}\label{classSystemTF_a1f9c8c8862e75fefa275cf1eb9b949a0}} 
+double {\bfseries Get\+Den\+Order} () const
+\item 
+\mbox{\Hypertarget{classSystemTF_ad124f738ec23e7156397c2862d458731}\label{classSystemTF_ad124f738ec23e7156397c2862d458731}} 
+long {\bfseries Get\+Transfer} (std\+::vector$<$ double $>$ \&num\+Coefficients, std\+::vector$<$ double $>$ \&den\+Coefficients) const
+\item 
+\mbox{\Hypertarget{classSystemTF_a9449a253726723aeaff2a38b153c6f96}\label{classSystemTF_a9449a253726723aeaff2a38b153c6f96}} 
+double {\bfseries Get\+State} () const
+\item 
+\mbox{\Hypertarget{classSystemTF_a0778d68ca54ef997fa9c595ea655fbb3}\label{classSystemTF_a0778d68ca54ef997fa9c595ea655fbb3}} 
+double {\bfseries Output\+Update} (double new\+\_\+input)
+\item 
+\mbox{\Hypertarget{classSystemTF_a353435c0943bc6b601e2b3540c4f0831}\label{classSystemTF_a353435c0943bc6b601e2b3540c4f0831}} 
+long {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{classSystemTF_a0cecac617091aee7b323f6c671ed5350}\label{classSystemTF_a0cecac617091aee7b323f6c671ed5350}} 
+long {\bfseries Reset} (double new\+\_\+state)
+\item 
+\mbox{\Hypertarget{classSystemTF_a6c5b641fcd222cdf2ad7fe980d1e96df}\label{classSystemTF_a6c5b641fcd222cdf2ad7fe980d1e96df}} 
+long {\bfseries Get\+Magnitude\+And\+Phase} (double dts, double w, double \&magnitude, double \&phase) const
+\item 
+\mbox{\Hypertarget{classSystemTF_abf53f672ffa586c0ae7970e5f4438285}\label{classSystemTF_abf53f672ffa586c0ae7970e5f4438285}} 
+double {\bfseries Print\+ZTransfer\+Function} (double dts)
+\item 
+\mbox{\Hypertarget{classSystemTF_ae08609c8b1c38bdb3fc494e190d96110}\label{classSystemTF_ae08609c8b1c38bdb3fc494e190d96110}} 
+double {\bfseries Get\+ZTransfer\+Function} (vector$<$ double $>$ \&num, vector$<$ double $>$ \&den)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classSystemBlock}{System\+Block}} class\+: This class encapsulates a system control block, defined by its transference function G.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+System\+TF.\+h\item 
+System\+TF.\+cpp\end{DoxyCompactItemize}

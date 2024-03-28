@@ -1,0 +1,66 @@
+\hypertarget{classBaseBlock}{}\doxysection{Base\+Block Class Reference}
+\label{classBaseBlock}\index{BaseBlock@{BaseBlock}}
+
+
+Inheritance diagram for Base\+Block\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBaseBlock__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{classBaseBlock_ac120839d27b9a48d5f82f05e3e9426e8}{Set\+Saturation}} (double low, double high)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classBaseBlock_ac120839d27b9a48d5f82f05e3e9426e8}{Base\+Block\+::\+Set\+Saturation}}\+: Apply an output saturation to block response. Only output saturation is available. If you need an input saturation use the previous block output saturation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBaseBlock_ae6a969820e985e49e532efad6a014991}\label{classBaseBlock_ae6a969820e985e49e532efad6a014991}} 
+double {\bfseries max\+Out}
+\item 
+\mbox{\Hypertarget{classBaseBlock_a38b0ea2f224da2f6bdaa640125ce4b2b}\label{classBaseBlock_a38b0ea2f224da2f6bdaa640125ce4b2b}} 
+double {\bfseries min\+Out}
+\item 
+\mbox{\Hypertarget{classBaseBlock_a4a3ecdf7aaa339c41123c7b913dee9f6}\label{classBaseBlock_a4a3ecdf7aaa339c41123c7b913dee9f6}} 
+bool {\bfseries saturation}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBaseBlock_aa5bd0abec75960903a4968aacd39a8d3}\label{classBaseBlock_aa5bd0abec75960903a4968aacd39a8d3}} 
+double {\bfseries operator$>$} (double input, \mbox{\hyperlink{classBaseBlock}{Base\+Block}} \&output)
+\item 
+\mbox{\Hypertarget{classBaseBlock_af82282441914a564c3d9e4fc845545d1}\label{classBaseBlock_af82282441914a564c3d9e4fc845545d1}} 
+double {\bfseries operator$>$} (\mbox{\hyperlink{classBaseBlock}{Base\+Block}} \&from, double \&to)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBaseBlock_ac120839d27b9a48d5f82f05e3e9426e8}\label{classBaseBlock_ac120839d27b9a48d5f82f05e3e9426e8}} 
+\index{BaseBlock@{BaseBlock}!SetSaturation@{SetSaturation}}
+\index{SetSaturation@{SetSaturation}!BaseBlock@{BaseBlock}}
+\doxysubsubsection{\texorpdfstring{SetSaturation()}{SetSaturation()}}
+{\footnotesize\ttfamily long Base\+Block\+::\+Set\+Saturation (\begin{DoxyParamCaption}\item[{double}]{low,  }\item[{double}]{high }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classBaseBlock_ac120839d27b9a48d5f82f05e3e9426e8}{Base\+Block\+::\+Set\+Saturation}}\+: Apply an output saturation to block response. Only output saturation is available. If you need an input saturation use the previous block output saturation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em low} & Lowest value for the possible output. \\
+\hline
+{\em high} & Highest value for the possible output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Block.\+h\item 
+Block.\+cpp\end{DoxyCompactItemize}

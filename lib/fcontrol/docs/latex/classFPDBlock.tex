@@ -1,0 +1,94 @@
+\hypertarget{classFPDBlock}{}\doxysection{FPDBlock Class Reference}
+\label{classFPDBlock}\index{FPDBlock@{FPDBlock}}
+
+
+Inheritance diagram for FPDBlock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classFPDBlock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for FPDBlock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classFPDBlock__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFPDBlock_ac7f365a2e6ec840af71cfaebad71ee16}{FPDBlock}} (double new\+\_\+kp=1, double new\+\_\+kd=1, double new\+\_\+fex=1, double new\+\_\+dts=0.\+001)
+\begin{DoxyCompactList}\small\item\em Block class implementing a fractional order controller following the transfer function FOC(s)=kp+kd·s$^\wedge$fex. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFPDBlock_a7765377a4ecf5cc2cf05d7e523b96451}\label{classFPDBlock_a7765377a4ecf5cc2cf05d7e523b96451}} 
+double {\bfseries Output\+Update} (double new\+\_\+input)
+\item 
+long \mbox{\hyperlink{classFPDBlock_aa5b1e7d68ca3e8179acb11fccbde733c}{Parameter\+Update}} (vector$<$ double $>$ new\+\_\+params)
+\begin{DoxyCompactList}\small\item\em Update the controller parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFPDBlock_ac0be1688756be02078d69489b5e49799}\label{classFPDBlock_ac0be1688756be02078d69489b5e49799}} 
+double {\bfseries Get\+State} () const
+\item 
+\mbox{\Hypertarget{classFPDBlock_a9c27d2e13428052438b04d863d1ac34b}\label{classFPDBlock_a9c27d2e13428052438b04d863d1ac34b}} 
+long {\bfseries Print\+Parameters} ()
+\item 
+\mbox{\Hypertarget{classFPDBlock_a44a5ebbf65cf408121663a6cb42d37d1}\label{classFPDBlock_a44a5ebbf65cf408121663a6cb42d37d1}} 
+long {\bfseries Get\+Parameters} (double \&out\+\_\+kp, double \&out\+\_\+kd, double \&out\+\_\+fex)
+\item 
+\mbox{\Hypertarget{classFPDBlock_ae155e64af6c7938a3d7045d94283609d}\label{classFPDBlock_ae155e64af6c7938a3d7045d94283609d}} 
+long {\bfseries Anti\+Windup} (double min\+Plant\+Saturation, double max\+Plant\+Saturation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFPDBlock_ac7f365a2e6ec840af71cfaebad71ee16}\label{classFPDBlock_ac7f365a2e6ec840af71cfaebad71ee16}} 
+\index{FPDBlock@{FPDBlock}!FPDBlock@{FPDBlock}}
+\index{FPDBlock@{FPDBlock}!FPDBlock@{FPDBlock}}
+\doxysubsubsection{\texorpdfstring{FPDBlock()}{FPDBlock()}}
+{\footnotesize\ttfamily FPDBlock\+::\+FPDBlock (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+kp = {\ttfamily 1},  }\item[{double}]{new\+\_\+kd = {\ttfamily 1},  }\item[{double}]{new\+\_\+fex = {\ttfamily 1},  }\item[{double}]{new\+\_\+dts = {\ttfamily 0.001} }\end{DoxyParamCaption})}
+
+
+
+Block class implementing a fractional order controller following the transfer function FOC(s)=kp+kd·s$^\wedge$fex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+kp} & Proportional controller gain. \\
+\hline
+{\em new\+\_\+kd} & Operator controller gain. \\
+\hline
+{\em new\+\_\+fex} & Operator frational exponent. Negative exponents define fractional integrators while positive exponent define fractional derivative operator. \\
+\hline
+{\em new\+\_\+dts} & Sampling time considered in the controller loop. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFPDBlock_aa5b1e7d68ca3e8179acb11fccbde733c}\label{classFPDBlock_aa5b1e7d68ca3e8179acb11fccbde733c}} 
+\index{FPDBlock@{FPDBlock}!ParameterUpdate@{ParameterUpdate}}
+\index{ParameterUpdate@{ParameterUpdate}!FPDBlock@{FPDBlock}}
+\doxysubsubsection{\texorpdfstring{ParameterUpdate()}{ParameterUpdate()}}
+{\footnotesize\ttfamily long FPDBlock\+::\+Parameter\+Update (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{new\+\_\+params }\end{DoxyParamCaption})}
+
+
+
+Update the controller parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+params} & An std\+::vector containing the new controller parameters in the same order as the constructor (kp,kd,fex). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if correct. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+FPDBlock.\+h\item 
+FPDBlock.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,54 @@
+\hypertarget{classPIDBlock}{}\doxysection{PIDBlock Class Reference}
+\label{classPIDBlock}\index{PIDBlock@{PIDBlock}}
+
+
+Inheritance diagram for PIDBlock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classPIDBlock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for PIDBlock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classPIDBlock__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPIDBlock_a9ec4d61a225f114a32640d2007b35ca8}\label{classPIDBlock_a9ec4d61a225f114a32640d2007b35ca8}} 
+{\bfseries PIDBlock} (double kp, double ki, double kd, double new\+\_\+\+Ts)
+\item 
+\mbox{\Hypertarget{classPIDBlock_a69d4c97d0b72eb2d650b5973b3a70073}\label{classPIDBlock_a69d4c97d0b72eb2d650b5973b3a70073}} 
+double {\bfseries Update\+Control} (double input)
+\item 
+\mbox{\Hypertarget{classPIDBlock_ad7681485e387b07c14aa1aa223668c96}\label{classPIDBlock_ad7681485e387b07c14aa1aa223668c96}} 
+double {\bfseries Update\+Control\+ILock} (double input)
+\item 
+\mbox{\Hypertarget{classPIDBlock_aa17a548fbbd21bbc5252c0a07a196dc2}\label{classPIDBlock_aa17a548fbbd21bbc5252c0a07a196dc2}} 
+double {\bfseries Output\+Update} (double input)
+\item 
+\mbox{\Hypertarget{classPIDBlock_acd43c404b64765a16607dac1fb08b265}\label{classPIDBlock_acd43c404b64765a16607dac1fb08b265}} 
+long {\bfseries Anti\+Windup} (double min\+Plant\+Saturation, double max\+Plant\+Saturation)
+\item 
+\mbox{\Hypertarget{classPIDBlock_a88dc6380a6a8ddb92143f269f1af9adc}\label{classPIDBlock_a88dc6380a6a8ddb92143f269f1af9adc}} 
+double {\bfseries Get\+State} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPIDBlock_a7c21e4973160d2d1521b4a3095b8e87a}\label{classPIDBlock_a7c21e4973160d2d1521b4a3095b8e87a}} 
+double {\bfseries operator$>$} (double input, \mbox{\hyperlink{classPIDBlock}{PIDBlock}} \&output)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+PIDBlock.\+h\item 
+PIDBlock.\+cpp\end{DoxyCompactItemize}

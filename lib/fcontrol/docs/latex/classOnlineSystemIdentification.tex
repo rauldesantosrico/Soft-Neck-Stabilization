@@ -1,0 +1,257 @@
+\hypertarget{classOnlineSystemIdentification}{}\doxysection{Online\+System\+Identification Class Reference}
+\label{classOnlineSystemIdentification}\index{OnlineSystemIdentification@{OnlineSystemIdentification}}
+
+
+The \mbox{\hyperlink{classOnlineSystemIdentification}{Online\+System\+Identification}} class is the base class for all the online system identification strategies. Recursive least squares is implemented and can be used, but any other methods can be implemented using inheritance and method overload (polymorphism).  
+
+
+
+
+{\ttfamily \#include $<$Online\+System\+Identification.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_a96c2e0f0bacb62a366d7822427a2712f}\label{classOnlineSystemIdentification_a96c2e0f0bacb62a366d7822427a2712f}} 
+\mbox{\hyperlink{classOnlineSystemIdentification_a96c2e0f0bacb62a366d7822427a2712f}{Online\+System\+Identification}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. Creates an RLS identification object with orders num=1, den=1, using a forgetting factor of 0.\+95. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOnlineSystemIdentification_a531e65a9f6dd24f503eee6200bf4dfdd}{Online\+System\+Identification}} (ulong new\+\_\+num\+Order, ulong new\+\_\+den\+Order, double new\+\_\+ff=0.\+95, double new\+\_\+param\+Filter=0.\+8, double new\+\_\+param\+Avg=20)
+\begin{DoxyCompactList}\small\item\em Parameter constructor. Numerator and denominator orders of the model are required. The other parameters are opotional. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOnlineSystemIdentification_abf5f31ba5bf8810bab8004729bd76295}{Online\+System\+Identification}} (ulong new\+\_\+num\+Order, ulong new\+\_\+den\+Order, \mbox{\hyperlink{classSystemBlock}{System\+Block}} new\+\_\+filter)
+\begin{DoxyCompactList}\small\item\em Constructor using defalut values and a filter. The filter is applied to all input and output signals received through Update\+System. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOnlineSystemIdentification_a5313ebc2cb614b30adfb5d23659208ff}{Online\+System\+Identification}} (ulong new\+\_\+num\+Order, ulong new\+\_\+den\+Order, \mbox{\hyperlink{classSystemBlock}{System\+Block}} new\+\_\+filter, double new\+\_\+ff, double new\+\_\+param\+Filter, double new\+\_\+param\+Avg=20)
+\begin{DoxyCompactList}\small\item\em Full parameter constructor version. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classOnlineSystemIdentification_a756fb633ea0ee9d5b9ce71bf3d52c795}{Set\+Filter}} (\mbox{\hyperlink{classSystemBlock}{System\+Block}} filter)
+\begin{DoxyCompactList}\small\item\em This filter will be used for i/o signal pre-\/processing. All the values received through Update\+System will pass through that filter. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classOnlineSystemIdentification_a637d350e99e27dab628a5075d6fb429b}{Set\+Delay}} (ulong known\+\_\+delay)
+\begin{DoxyCompactList}\small\item\em Sets a known plant output delay to consider during system identification. The delay is usually introduced by the sensor processing times. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classOnlineSystemIdentification_ab6ff7380d3c20dcef19efbedc6a39e65}{Update\+System}} (double new\+\_\+input, double new\+\_\+output)
+\begin{DoxyCompactList}\small\item\em Updates the system model for two new i/o values. It is up to the user to call this function just one time per samplig period. Note that calling before the sampling time or after can result in different system identifications. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classOnlineSystemIdentification_a67c5d8a59b0dea00be285d95810b44a6}{Update\+System\+DT1}} (double new\+\_\+input, double new\+\_\+output)
+\begin{DoxyCompactList}\small\item\em Under construction. DO NOT USE. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classOnlineSystemIdentification_af32bb24e00eea54e0a516b6cbfeaa033}{Update\+System\+PEff}} (double new\+\_\+input, double new\+\_\+output)
+\begin{DoxyCompactList}\small\item\em Under construction. DO NOT USE. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classOnlineSystemIdentification_a244bf5efa30036da496402ac76b12053}{Get\+ZTransfer\+Function}} (vector$<$ double $>$ \&num, vector$<$ double $>$ \&den)
+\begin{DoxyCompactList}\small\item\em Export the identified model in a z transfer funcion defined by two coefficient vectors (num and den). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_ac2010e837ea7c06a1ecbf9451a38b9d4}\label{classOnlineSystemIdentification_ac2010e837ea7c06a1ecbf9451a38b9d4}} 
+double {\bfseries Print\+ZTransfer\+Function} (double dts)
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_a59f81f3402d6229f7fed4989e6e8e0ae}\label{classOnlineSystemIdentification_a59f81f3402d6229f7fed4989e6e8e0ae}} 
+vector$<$ double $>$ {\bfseries Get\+Params\+Vector} ()
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_a2b124d57a197005762c839ffe05ccc02}\label{classOnlineSystemIdentification_a2b124d57a197005762c839ffe05ccc02}} 
+double {\bfseries Print\+Params\+Vector} ()
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_ae6eaed670378dbdb68973d0803f69989}\label{classOnlineSystemIdentification_ae6eaed670378dbdb68973d0803f69989}} 
+long {\bfseries Get\+Magnitude\+And\+Phase} (double dts, double w, double \&magnitude, double \&phase)
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_afaed23010b25a28f814e7b3bfb1c4964}\label{classOnlineSystemIdentification_afaed23010b25a28f814e7b3bfb1c4964}} 
+long {\bfseries Get\+System\+Block} (\mbox{\hyperlink{classSystemBlock}{System\+Block}} \&idsys)
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_ad7ae08b577c44cc89354c406de1f5244}\label{classOnlineSystemIdentification_ad7ae08b577c44cc89354c406de1f5244}} 
+double {\bfseries Get\+Avg\+ZTransfer\+Function} (vector$<$ double $>$ \&num, vector$<$ double $>$ \&den)
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_a88aa351fb34b2ca242a5b914150e153c}\label{classOnlineSystemIdentification_a88aa351fb34b2ca242a5b914150e153c}} 
+long {\bfseries Get\+Avg\+System\+Block} (\mbox{\hyperlink{classSystemBlock}{System\+Block}} \&idsys)
+\item 
+\mbox{\Hypertarget{classOnlineSystemIdentification_ad462f7d9fc9ecba379bd809f01a9394d}\label{classOnlineSystemIdentification_ad462f7d9fc9ecba379bd809f01a9394d}} 
+long {\bfseries Set\+Params\+Vector} (vector$<$ double $>$ new\+\_\+th)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classOnlineSystemIdentification}{Online\+System\+Identification}} class is the base class for all the online system identification strategies. Recursive least squares is implemented and can be used, but any other methods can be implemented using inheritance and method overload (polymorphism). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOnlineSystemIdentification_a531e65a9f6dd24f503eee6200bf4dfdd}\label{classOnlineSystemIdentification_a531e65a9f6dd24f503eee6200bf4dfdd}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{OnlineSystemIdentification()}{OnlineSystemIdentification()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Online\+System\+Identification\+::\+Online\+System\+Identification (\begin{DoxyParamCaption}\item[{ulong}]{new\+\_\+num\+Order,  }\item[{ulong}]{new\+\_\+den\+Order,  }\item[{double}]{new\+\_\+ff = {\ttfamily 0.95},  }\item[{double}]{new\+\_\+param\+Filter = {\ttfamily 0.8},  }\item[{double}]{new\+\_\+param\+Avg = {\ttfamily 20} }\end{DoxyParamCaption})}
+
+
+
+Parameter constructor. Numerator and denominator orders of the model are required. The other parameters are opotional. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+num\+Order} & Numerator polynomial order. Set values from 0 (constant) to n (z$^\wedge$n). \\
+\hline
+{\em new\+\_\+den\+Order} & Denominator polynomial order. Set values from 0 (constant) to n (z$^\wedge$n). \\
+\hline
+{\em new\+\_\+ff} & Forgetting factor. This factor controls the influence of past values considered in the identification. Range of values (0, 1\mbox{]} (can\textquotesingle{}t use zero). The higher values of the factor, the longest algorithm memory, resulting in a standard RLS for ff=1. The lower ff gets, the less amount of past data are considered (shorter memory), meaning that identification will be more responsive but maybe less accurate. \\
+\hline
+{\em new\+\_\+param\+Filter} & Another parameter to improve identification. Not used currently. \\
+\hline
+{\em new\+\_\+param\+Avg} & Another parameter to improve identification. Not used currently. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOnlineSystemIdentification_abf5f31ba5bf8810bab8004729bd76295}\label{classOnlineSystemIdentification_abf5f31ba5bf8810bab8004729bd76295}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{OnlineSystemIdentification()}{OnlineSystemIdentification()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Online\+System\+Identification\+::\+Online\+System\+Identification (\begin{DoxyParamCaption}\item[{ulong}]{new\+\_\+num\+Order,  }\item[{ulong}]{new\+\_\+den\+Order,  }\item[{\mbox{\hyperlink{classSystemBlock}{System\+Block}}}]{new\+\_\+filter }\end{DoxyParamCaption})}
+
+
+
+Constructor using defalut values and a filter. The filter is applied to all input and output signals received through Update\+System. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+num\+Order} & Numerator polynomial order. Set values from 0 (constant) to n (z$^\wedge$n). \\
+\hline
+{\em new\+\_\+den\+Order} & Denominator polynomial order. Set values from 0 (constant) to n (z$^\wedge$n). \\
+\hline
+{\em filter} & A \mbox{\hyperlink{classSystemBlock}{System\+Block}} object defining the new IIR filter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOnlineSystemIdentification_a5313ebc2cb614b30adfb5d23659208ff}\label{classOnlineSystemIdentification_a5313ebc2cb614b30adfb5d23659208ff}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{OnlineSystemIdentification()}{OnlineSystemIdentification()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Online\+System\+Identification\+::\+Online\+System\+Identification (\begin{DoxyParamCaption}\item[{ulong}]{new\+\_\+num\+Order,  }\item[{ulong}]{new\+\_\+den\+Order,  }\item[{\mbox{\hyperlink{classSystemBlock}{System\+Block}}}]{new\+\_\+filter,  }\item[{double}]{new\+\_\+ff,  }\item[{double}]{new\+\_\+param\+Filter,  }\item[{double}]{new\+\_\+param\+Avg = {\ttfamily 20} }\end{DoxyParamCaption})}
+
+
+
+Full parameter constructor version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+num\+Order} & Numerator polynomial order. Set values from 0 (constant) to n (z$^\wedge$n). \\
+\hline
+{\em new\+\_\+den\+Order} & Denominator polynomial order. Set values from 0 (constant) to n (z$^\wedge$n). \\
+\hline
+{\em filter} & A \mbox{\hyperlink{classSystemBlock}{System\+Block}} object defining the new IIR filter. \\
+\hline
+{\em new\+\_\+ff} & Forgetting factor. This factor controls the influence of past values considered in the identification. \\
+\hline
+{\em new\+\_\+param\+Filter} & Another parameter to improve identification. Not used currently. \\
+\hline
+{\em new\+\_\+param\+Avg} & Another parameter to improve identification. Not used currently. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOnlineSystemIdentification_a244bf5efa30036da496402ac76b12053}\label{classOnlineSystemIdentification_a244bf5efa30036da496402ac76b12053}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!GetZTransferFunction@{GetZTransferFunction}}
+\index{GetZTransferFunction@{GetZTransferFunction}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{GetZTransferFunction()}{GetZTransferFunction()}}
+{\footnotesize\ttfamily double Online\+System\+Identification\+::\+Get\+ZTransfer\+Function (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ \&}]{num,  }\item[{vector$<$ double $>$ \&}]{den }\end{DoxyParamCaption})}
+
+
+
+Export the identified model in a z transfer funcion defined by two coefficient vectors (num and den). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Vector defining the numerator. \\
+\hline
+{\em den} & Vector defining the denominator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The last error obtained in the identification. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOnlineSystemIdentification_a637d350e99e27dab628a5075d6fb429b}\label{classOnlineSystemIdentification_a637d350e99e27dab628a5075d6fb429b}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!SetDelay@{SetDelay}}
+\index{SetDelay@{SetDelay}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{SetDelay()}{SetDelay()}}
+{\footnotesize\ttfamily long Online\+System\+Identification\+::\+Set\+Delay (\begin{DoxyParamCaption}\item[{ulong}]{known\+\_\+delay }\end{DoxyParamCaption})}
+
+
+
+Sets a known plant output delay to consider during system identification. The delay is usually introduced by the sensor processing times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em known\+\_\+delay} & The known number of samples that plant output is delayed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative for errors, positive for warnings or information. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOnlineSystemIdentification_a756fb633ea0ee9d5b9ce71bf3d52c795}\label{classOnlineSystemIdentification_a756fb633ea0ee9d5b9ce71bf3d52c795}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!SetFilter@{SetFilter}}
+\index{SetFilter@{SetFilter}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{SetFilter()}{SetFilter()}}
+{\footnotesize\ttfamily long Online\+System\+Identification\+::\+Set\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystemBlock}{System\+Block}}}]{filter }\end{DoxyParamCaption})}
+
+
+
+This filter will be used for i/o signal pre-\/processing. All the values received through Update\+System will pass through that filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & A \mbox{\hyperlink{classSystemBlock}{System\+Block}} object defining the new IIR filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative for errors, positive for warnings or information. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOnlineSystemIdentification_ab6ff7380d3c20dcef19efbedc6a39e65}\label{classOnlineSystemIdentification_ab6ff7380d3c20dcef19efbedc6a39e65}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!UpdateSystem@{UpdateSystem}}
+\index{UpdateSystem@{UpdateSystem}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{UpdateSystem()}{UpdateSystem()}}
+{\footnotesize\ttfamily double Online\+System\+Identification\+::\+Update\+System (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+input,  }\item[{double}]{new\+\_\+output }\end{DoxyParamCaption})}
+
+
+
+Updates the system model for two new i/o values. It is up to the user to call this function just one time per samplig period. Note that calling before the sampling time or after can result in different system identifications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+input} & The last input sent to the plant. \\
+\hline
+{\em new\+\_\+output} & The output produced during the last input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The a priori error obtained using the current identified parameters. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOnlineSystemIdentification_a67c5d8a59b0dea00be285d95810b44a6}\label{classOnlineSystemIdentification_a67c5d8a59b0dea00be285d95810b44a6}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!UpdateSystemDT1@{UpdateSystemDT1}}
+\index{UpdateSystemDT1@{UpdateSystemDT1}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{UpdateSystemDT1()}{UpdateSystemDT1()}}
+{\footnotesize\ttfamily double Online\+System\+Identification\+::\+Update\+System\+DT1 (\begin{DoxyParamCaption}\item[{double}]{input,  }\item[{double}]{output }\end{DoxyParamCaption})}
+
+
+
+Under construction. DO NOT USE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+input} & \\
+\hline
+{\em new\+\_\+output} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+!!\+Not working, needs revision!!!\mbox{\Hypertarget{classOnlineSystemIdentification_af32bb24e00eea54e0a516b6cbfeaa033}\label{classOnlineSystemIdentification_af32bb24e00eea54e0a516b6cbfeaa033}} 
+\index{OnlineSystemIdentification@{OnlineSystemIdentification}!UpdateSystemPEff@{UpdateSystemPEff}}
+\index{UpdateSystemPEff@{UpdateSystemPEff}!OnlineSystemIdentification@{OnlineSystemIdentification}}
+\doxysubsubsection{\texorpdfstring{UpdateSystemPEff()}{UpdateSystemPEff()}}
+{\footnotesize\ttfamily double Online\+System\+Identification\+::\+Update\+System\+PEff (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+input,  }\item[{double}]{new\+\_\+output }\end{DoxyParamCaption})}
+
+
+
+Under construction. DO NOT USE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+input} & \\
+\hline
+{\em new\+\_\+output} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+!!\+Not working, needs revision!!!
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Online\+System\+Identification.\+h\item 
+Online\+System\+Identification.\+cpp\end{DoxyCompactItemize}

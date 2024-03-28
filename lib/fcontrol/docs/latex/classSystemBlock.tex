@@ -1,0 +1,147 @@
+\hypertarget{classSystemBlock}{}\doxysection{System\+Block Class Reference}
+\label{classSystemBlock}\index{SystemBlock@{SystemBlock}}
+
+
+The \mbox{\hyperlink{classSystemBlock}{System\+Block}} class\+: This class encapsulates a system control block, defined by its transference function G. 
+
+
+
+
+{\ttfamily \#include $<$System\+Block.\+h$>$}
+
+
+
+Inheritance diagram for System\+Block\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classSystemBlock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for System\+Block\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classSystemBlock__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSystemBlock_a805cd6e8f7a36d72cc67760fd40cc4e5}\label{classSystemBlock_a805cd6e8f7a36d72cc67760fd40cc4e5}} 
+\mbox{\hyperlink{classSystemBlock_a805cd6e8f7a36d72cc67760fd40cc4e5}{System\+Block}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. Creates a unity transfer fucntion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystemBlock_a97f55d7953f7a07d8c2290d5039fa5b6}{System\+Block}} (const std\+::vector$<$ double $>$ \&new\+\_\+num\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Coef)
+\begin{DoxyCompactList}\small\item\em Vector constructor. Creates a transfer fucntion using the coefficients received as numerator and denominator. The positive order of the z varaible is coincident with the vector position, therefore the first position (index 0) defines the coefficient of z$^\wedge$0, second position (index 1) defines the coefficient of z$^\wedge$1, etc... \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystemBlock_a2f513f638f6f177b611f8bdd42fc357d}{System\+Block}} (const std\+::vector$<$ double $>$ \&new\+\_\+num\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Coef, double new\+\_\+gain)
+\begin{DoxyCompactList}\small\item\em Vector constructor. Creates a transfer fucntion using the coefficients received as numerator and denominator. The positive order of the z varaible is coincident with the vector position, therefore the first position (index 0) defines the coefficient of z$^\wedge$0, second position (index 1) defines the coefficient of z$^\wedge$1, etc... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSystemBlock_aebc24f49318e27ce761c34335ee6fe63}\label{classSystemBlock_aebc24f49318e27ce761c34335ee6fe63}} 
+{\bfseries System\+Block} (const std\+::vector$<$ double $>$ \&new\+\_\+num\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Coef, const std\+::vector$<$ double $>$ \&new\+\_\+num\+Exps, const std\+::vector$<$ double $>$ \&new\+\_\+den\+Exps)
+\item 
+\mbox{\Hypertarget{classSystemBlock_ac67265b0f826a3fdaf368ba369260c6b}\label{classSystemBlock_ac67265b0f826a3fdaf368ba369260c6b}} 
+{\bfseries System\+Block} (const \mbox{\hyperlink{classTransferFunction}{Transfer\+Function}} \&newH)
+\item 
+\mbox{\hyperlink{classSystemBlock_a47f1d89600cf61345ca525d90f8d6d6c}{System\+Block}} (double b0, double b1, double a0, double a1)
+\begin{DoxyCompactList}\small\item\em First order parameter constructor. Receives four scalars defining a first order system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSystemBlock_a9d9ce9707e97752cb79b7200381fd5eb}\label{classSystemBlock_a9d9ce9707e97752cb79b7200381fd5eb}} 
+double {\bfseries Get\+Num\+Order} () const
+\item 
+\mbox{\Hypertarget{classSystemBlock_aafa63d22e9bc04dfd6785c82fb624c1b}\label{classSystemBlock_aafa63d22e9bc04dfd6785c82fb624c1b}} 
+double {\bfseries Get\+Den\+Order} () const
+\item 
+\mbox{\Hypertarget{classSystemBlock_ac5d4ba30215886e134be5b708d26a85a}\label{classSystemBlock_ac5d4ba30215886e134be5b708d26a85a}} 
+long {\bfseries Get\+Transfer} (std\+::vector$<$ double $>$ \&num\+Coefficients, std\+::vector$<$ double $>$ \&den\+Coefficients) const
+\item 
+\mbox{\Hypertarget{classSystemBlock_ae62d4632625bf835f47e948d52a50d84}\label{classSystemBlock_ae62d4632625bf835f47e948d52a50d84}} 
+double {\bfseries Get\+State} () const
+\item 
+\mbox{\Hypertarget{classSystemBlock_a2f74c572b6a9527b6b5bde03ba8ab9e6}\label{classSystemBlock_a2f74c572b6a9527b6b5bde03ba8ab9e6}} 
+double {\bfseries Output\+Update} (double new\+\_\+input)
+\item 
+\mbox{\Hypertarget{classSystemBlock_a6162ac92f0d85ff36bff5210cb220871}\label{classSystemBlock_a6162ac92f0d85ff36bff5210cb220871}} 
+long {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{classSystemBlock_ab625ea576d56ba6c376b08eb88bd7c34}\label{classSystemBlock_ab625ea576d56ba6c376b08eb88bd7c34}} 
+long {\bfseries Reset} (double new\+\_\+state)
+\item 
+\mbox{\Hypertarget{classSystemBlock_ad201a404d0b22776a4f012c1f8f835dd}\label{classSystemBlock_ad201a404d0b22776a4f012c1f8f835dd}} 
+long {\bfseries Get\+Magnitude\+And\+Phase} (double dts, double w, double \&magnitude, double \&phase) const
+\item 
+\mbox{\Hypertarget{classSystemBlock_a985890f3866754cccfad457cddf913f4}\label{classSystemBlock_a985890f3866754cccfad457cddf913f4}} 
+double {\bfseries Print\+ZTransfer\+Function} (double dts)
+\item 
+\mbox{\Hypertarget{classSystemBlock_acfbb10d3f3f244cf4fec78b613364821}\label{classSystemBlock_acfbb10d3f3f244cf4fec78b613364821}} 
+double {\bfseries Get\+ZTransfer\+Function} (vector$<$ double $>$ \&num, vector$<$ double $>$ \&den)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classSystemBlock}{System\+Block}} class\+: This class encapsulates a system control block, defined by its transference function G.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSystemBlock_a97f55d7953f7a07d8c2290d5039fa5b6}\label{classSystemBlock_a97f55d7953f7a07d8c2290d5039fa5b6}} 
+\index{SystemBlock@{SystemBlock}!SystemBlock@{SystemBlock}}
+\index{SystemBlock@{SystemBlock}!SystemBlock@{SystemBlock}}
+\doxysubsubsection{\texorpdfstring{SystemBlock()}{SystemBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily System\+Block\+::\+System\+Block (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{new\+\_\+num\+Coef,  }\item[{const std\+::vector$<$ double $>$ \&}]{new\+\_\+den\+Coef }\end{DoxyParamCaption})}
+
+
+
+Vector constructor. Creates a transfer fucntion using the coefficients received as numerator and denominator. The positive order of the z varaible is coincident with the vector position, therefore the first position (index 0) defines the coefficient of z$^\wedge$0, second position (index 1) defines the coefficient of z$^\wedge$1, etc... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+num\+Coef} & An std\+::vector with the positive z polynomial Numerator coefficients \mbox{[}c0, c1, .. , cn\mbox{]} -\/$>$ (c0·z$^\wedge$0 + c1·z$^\wedge$1 + .. + cn·z$^\wedge$n). \\
+\hline
+{\em new\+\_\+den\+Coef} & An std\+::vector with the positive z polynomial Deniminator coefficients \mbox{[}c0, c1, .. , cn\mbox{]} -\/$>$ (c0·z$^\wedge$0 + c1·z$^\wedge$1 + .. + cn·z$^\wedge$n). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSystemBlock_a2f513f638f6f177b611f8bdd42fc357d}\label{classSystemBlock_a2f513f638f6f177b611f8bdd42fc357d}} 
+\index{SystemBlock@{SystemBlock}!SystemBlock@{SystemBlock}}
+\index{SystemBlock@{SystemBlock}!SystemBlock@{SystemBlock}}
+\doxysubsubsection{\texorpdfstring{SystemBlock()}{SystemBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily System\+Block\+::\+System\+Block (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{new\+\_\+num\+Coef,  }\item[{const std\+::vector$<$ double $>$ \&}]{new\+\_\+den\+Coef,  }\item[{double}]{new\+\_\+gain }\end{DoxyParamCaption})}
+
+
+
+Vector constructor. Creates a transfer fucntion using the coefficients received as numerator and denominator. The positive order of the z varaible is coincident with the vector position, therefore the first position (index 0) defines the coefficient of z$^\wedge$0, second position (index 1) defines the coefficient of z$^\wedge$1, etc... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+num\+Coef} & An std\+::vector with the positive z polynomial Numerator coefficients \mbox{[}c0, c1, .. , cn\mbox{]} -\/$>$ (c0·z$^\wedge$0 + c1·z$^\wedge$1 + .. + cn·z$^\wedge$n). \\
+\hline
+{\em new\+\_\+den\+Coef} & An std\+::vector with the positive z polynomial Deniminator coefficients \mbox{[}c0, c1, .. , cn\mbox{]} -\/$>$ (c0·z$^\wedge$0 + c1·z$^\wedge$1 + .. + cn·z$^\wedge$n). \\
+\hline
+{\em new\+\_\+gain} & Scalar gain affecting the transfer function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSystemBlock_a47f1d89600cf61345ca525d90f8d6d6c}\label{classSystemBlock_a47f1d89600cf61345ca525d90f8d6d6c}} 
+\index{SystemBlock@{SystemBlock}!SystemBlock@{SystemBlock}}
+\index{SystemBlock@{SystemBlock}!SystemBlock@{SystemBlock}}
+\doxysubsubsection{\texorpdfstring{SystemBlock()}{SystemBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily System\+Block\+::\+System\+Block (\begin{DoxyParamCaption}\item[{double}]{b0,  }\item[{double}]{b1,  }\item[{double}]{a0,  }\item[{double}]{a1 }\end{DoxyParamCaption})}
+
+
+
+First order parameter constructor. Receives four scalars defining a first order system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b0} & Numerator zero order z coefficient (independent term). \\
+\hline
+{\em b1} & Numerator order 1 z coefficient. \\
+\hline
+{\em a0} & Denominator zero order z coefficient (independent term). \\
+\hline
+{\em a1} & Denominator order 1 z coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+System\+Block.\+h\item 
+System\+Block.\+cpp\end{DoxyCompactItemize}
