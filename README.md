@@ -10,7 +10,8 @@ Note: To perform the experiment with full robot integration, [Yarp](https://www.
 
 ## 2. Compilation:
 ```bash
-$ cd soft-Neck-Stabilization/
+$ git clone https://github.com/rauldesantosrico/soft-neck-camera-stabilization.git
+$ cd soft-neck-camera-stabilization/
 $ mkdir build
 $ cd build/
 $ cmake ..
